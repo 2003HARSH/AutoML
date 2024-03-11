@@ -16,4 +16,9 @@ Welcome to our user-friendly Machine Learning (ML) model creation platform desig
 - **Cloud Integration:** Seamlessly run and deploy models on the cloud for scalability.
 - **Security and Privacy:** Robust measures to protect user data and adhere to privacy standards.
 
-Join our platform to explore the world of ML, learn, and create impactful models without the need for extensive ML expertise. Happy modeling! 🚀✨
+Embark on this journey with us! 🚀✨ This project marks the beginning of my final year endeavor, and there's a long way to go. Join me in exploring the world of ML, learning, and creating impactful models without the need for extensive ML expertise. Happy modeling!
+
+
+
+
+
