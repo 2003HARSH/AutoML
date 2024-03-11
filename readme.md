@@ -1,4 +1,4 @@
-**GitHub Repository Description: Machine Learning Model Creation Platform**
+**Machine Learning Model Creation Platform**
 
 Welcome to my user-friendly Machine Learning (ML) model creation platform designed for individuals with limited or no prior ML experience. This platform empowers users to effortlessly create ML models through an intuitive interface, drag-and-drop functionality, and pre-built templates for various ML tasks such as classification, regression, and clustering.
 
