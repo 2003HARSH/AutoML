@@ -1,3 +1,6 @@
 1. Preprocessing class
 2. Mlxtend graph for classification
 3. Suggestion mechanism
+4. Add hyperparameters 
+5. In Preprocesing class make df an object attribute which will allow modifying the new df without changing the original one.
+5. In decisionTree add dtreeviz (Decision tree visualization).

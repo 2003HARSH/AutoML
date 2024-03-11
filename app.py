@@ -2,23 +2,26 @@ import streamlit as st
 import pandas as pd
 from streamlit_pandas_profiling import st_profile_report
 from ydata_profiling import ProfileReport
-from ml_models import Linear_Regression,Logistic_Regression
+from models.Linear_Regression import Linear_Regression
+from models.Logistic_Regression import Logistic_Regression
+from models.Decision_Tree_Classifier import Decision_Tree_Classifier
+from models.Desicion_Tree_Regressor import Decision_Tree_Regressor 
+import graphs
+
+st.set_page_config(
+        page_title="AutoML",
+)
 
 if 'fit_clicked' not in st.session_state:
     st.session_state['fit_clicked']=False
 
-
 st.header('Welcome to Automated ML')
-
-
 
 with st.sidebar.header('MLDLC'):
     file = st.sidebar.file_uploader("Upload your input CSV file", type=["csv"])
 with st.sidebar:
-    model=st.selectbox('2. Choose your model',['Select','Linear Regression','Logistic Regression'])
+    model=st.selectbox('2. Choose your model',['Select','Linear Regression','Logistic Regression','Decision Tree Classifier','Decision Tree Regressor'])
     
-
-
 if file is not None:
     df=pd.read_csv(file)
     if st.button('Show EDA'):
@@ -33,33 +36,45 @@ if file is not None:
 def callback():
     st.session_state['fit_clicked']=True
 
+def show_output_regression(model):
+    if st.button('Fit the model',on_click=callback) or st.session_state['fit_clicked']:
+        model.fit()
+        st.header('Predict')
+        st.text('The predicted value is '+ str(model.predict(model.input_col)))
+        if type(model).__name__=='Decision_Tree_Regressor':
+            graphs.tree_plot(model)
+
+def show_output_classification(model):
+    if st.button('Fit the model',on_click=callback) or st.session_state['fit_clicked']:
+        model.fit()
+        st.header('Predict')
+        st.text('The predicted value is '+ str(model.predict(model.input_col)))
+        if type(model).__name__=='Decision_Tree_Classifier':
+            graphs.tree_plot(model)
+        graphs.decision_boundry(model)
+
 if model !='Select':
     if model == 'Linear Regression':
-        input_col=st.multiselect('**Select input columns**',df.columns)
-        target_col=st.selectbox('**Choose output Column**',df.columns)
-        total_col=input_col+[target_col]
-        st.dataframe(df[total_col].head())
-        test_size = st.number_input("**Choose testing data size**",value=0.2,min_value=0.1,max_value=0.6)
-        random_state = st.number_input("**Choose random state**",value=2,min_value=1,max_value=4294967295)
-        l_r=Linear_Regression(input_col,target_col,test_size,df,random_state)
-        if st.button('Fit the model',on_click=callback) or st.session_state['fit_clicked']:
-            l_r.fit()
-            st.header('Predict')
-            st.text('The predicted value is '+ str(l_r.predict(input_col)))
-    
+        model=Linear_Regression(df)
+        model.set_params()
+        show_output_regression(model)
 
     elif model=='Logistic Regression':
-        input_col=st.multiselect('**Select input columns**',df.columns)
-        target_col=st.selectbox('**Choose output Column**',df.columns)
-        total_col=input_col+[target_col]
-        st.dataframe(df[total_col].head())
-        test_size = st.number_input("**Choose testing data size**",value=0.2,min_value=0.1,max_value=0.6)
-        random_state = st.number_input("**Choose random state**",value=2,min_value=1,max_value=4294967295)
-        l_r=Logistic_Regression(input_col,target_col,test_size,df,random_state)
-        if st.button('Fit the model',on_click=callback) or st.session_state['fit_clicked']:
-            l_r.fit()
-            st.header('Predict')
-            st.text('The predicted value is '+ str(l_r.predict(input_col)))
+        model=Logistic_Regression(df)
+        model.set_params()
+        show_output_classification(model)
+
+    elif model=='Decision Tree Classifier':
+        model=Decision_Tree_Classifier(df)
+        model.set_params()
+        show_output_classification(model)
+
+    elif model=='Decision Tree Regressor':
+        model=Decision_Tree_Regressor(df)
+        model.set_params()
+        show_output_regression(model)
+     
+        
         
 
 

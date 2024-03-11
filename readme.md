@@ -1,6 +1,6 @@
 **GitHub Repository Description: Machine Learning Model Creation Platform**
 
-Welcome to our user-friendly Machine Learning (ML) model creation platform designed for individuals with limited or no prior ML experience. This platform empowers users to effortlessly create ML models through an intuitive interface, drag-and-drop functionality, and pre-built templates for various ML tasks such as classification, regression, and clustering.
+Welcome to my user-friendly Machine Learning (ML) model creation platform designed for individuals with limited or no prior ML experience. This platform empowers users to effortlessly create ML models through an intuitive interface, drag-and-drop functionality, and pre-built templates for various ML tasks such as classification, regression, and clustering.
 
 **Key Features:**
 - **User-Friendly Interface:** Intuitive design with clear instructions for easy navigation.
@@ -16,7 +16,7 @@ Welcome to our user-friendly Machine Learning (ML) model creation platform desig
 - **Cloud Integration:** Seamlessly run and deploy models on the cloud for scalability.
 - **Security and Privacy:** Robust measures to protect user data and adhere to privacy standards.
 
-Embark on this journey with us! 🚀✨ This project marks the beginning of my final year endeavor, and there's a long way to go. Join me in exploring the world of ML, learning, and creating impactful models without the need for extensive ML expertise. Happy modeling!
+Embark on this journey with us! 🚀✨ This project marks the beginning of my final year endeavor, and there's a long way to go. Most of the features are still being added . Join me in exploring the world of ML, learning, and creating impactful models without the need for extensive ML expertise. Happy modeling!
 
 
 
