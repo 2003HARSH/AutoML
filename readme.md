@@ -17,8 +17,3 @@ Welcome to my user-friendly Machine Learning (ML) model creation platform design
 - **Security and Privacy:** Robust measures to protect user data and adhere to privacy standards.
 
 Embark on this journey with us! 🚀✨ This project marks the beginning of my final year endeavor, and there's a long way to go. Most of the features are still being added . Join me in exploring the world of ML, learning, and creating impactful models without the need for extensive ML expertise. Happy modeling!
-
-
-
-
-
